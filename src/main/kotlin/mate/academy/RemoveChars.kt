@@ -1,6 +1,9 @@
 package mate.academy
 
 fun removeChars(str: String): String {
-    // Implement this function
+    if (str.length >= 2) {
+        return str.substring(1, str.length - 1)
+    }
+
     return ""
 }

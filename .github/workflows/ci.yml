@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
@@ -17,14 +17,14 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: gradle # Changed from maven to gradle
-      - name: Build with Gradle # Updated task name
-        run: ./gradlew build # Changed Maven command to Gradle command
-      - uses: mate-academy/auto-approve-action@v4
+          cache: gradle
+      - name: Build with Gradle
+        run: ./gradlew build
+      - uses: mate-academy/auto-approve-action@v2
         if: ${{ github.event.pull_request && success() }}
         with:
           github-token: ${{ github.token }}
-      - uses: mate-academy/auto-reject-action@v4
+      - uses: mate-academy/auto-reject-action@v2
         if: ${{ github.event.pull_request && failure() }}
         with:
           github-token: ${{ github.token }}

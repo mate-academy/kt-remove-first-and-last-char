@@ -1,7 +1,7 @@
 plugins {
     kotlin("jvm") version "1.8.0"
     application
-    id("io.gitlab.arturbosch.detekt") version "1.23.3"
+    //id("io.gitlab.arturbosch.detekt") version "1.23.3"
 }
 
 group = "mate.academy"
@@ -20,11 +20,16 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
+/*
 detekt {
     buildUponDefaultConfig = true // preconfigure defaults
     allRules = false // activate all available (even unstable) rules.
     baseline = file("$projectDir/config/baseline.xml") // a way of suppressing issues before introducing detekt
+}*/
+
+application {
+    mainClass.set("mate.academy.RemoveCharsKt")
 }

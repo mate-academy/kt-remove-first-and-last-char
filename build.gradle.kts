@@ -23,6 +23,12 @@ kotlin {
     jvmToolchain(11)
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
 detekt {
     buildUponDefaultConfig = true // preconfigure defaults
     allRules = false // activate all available (even unstable) rules.

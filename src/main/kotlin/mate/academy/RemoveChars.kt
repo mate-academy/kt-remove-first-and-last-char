@@ -1,6 +1,5 @@
 package mate.academy
 
 fun removeChars(str: String): String {
-    // Implement this function
-    return ""
+    return str.subSequence(1, str.length - 1).toString()
 }

@@ -1,6 +1,6 @@
 package mate.academy
 
 fun removeChars(str: String): String {
-    // Implement this function
-    return ""
+    var a = str.drop(1)
+    return a.dropLast(1)
 }

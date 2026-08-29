@@ -23,6 +23,7 @@ kotlin {
     jvmToolchain(11)
 }
 
+
 detekt {
     buildUponDefaultConfig = true // preconfigure defaults
     allRules = false // activate all available (even unstable) rules.

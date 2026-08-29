@@ -1,6 +1,7 @@
 package mate.academy
 
+private const val ONE = 1
+
 fun removeChars(str: String): String {
-    // Implement this function
-    return ""
+    return str.substring(ONE, str.length - ONE)
 }
